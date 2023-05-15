@@ -89,7 +89,7 @@ export default function Home() {
         } else {
             setAlertInput(false);
             const {fName, lName, mobile, email, city, lookingFor} = credentials;
-            const response = await fetch("http://localhost:5000/api/consultation/addConsultation", {
+            const response = await fetch(`${process.env.REACT_APP_API_URL}/consultation/addConsultation`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
