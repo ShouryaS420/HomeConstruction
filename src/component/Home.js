@@ -89,7 +89,7 @@ export default function Home() {
         } else {
             setAlertInput(false);
             const {fName, lName, mobile, email, city, lookingFor} = credentials;
-            const response = await fetch(`${process.env.REACT_APP_API_URL}/consultation/addConsultation`, {
+            const response = await fetch(`http://141.136.47.127/api/consultation/addConsultation`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -98,6 +98,16 @@ export default function Home() {
             });
             const json = await response.json();
             console.log(json);
+            setCredentials(
+                {
+                    fName: "",
+                    lName: "",
+                    mobile: "",
+                    email: "",
+                    city: "",
+                    lookingFor: "",
+                }
+            );
         }
     }
 
